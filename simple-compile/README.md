@@ -21,7 +21,8 @@ jar -tf simple-compile.jar
 # run class from jar
 java -cp simple-compile.jar HelloWorld
 
-# build jar with manifest
-jar -cfm simple-compile.jar MANIFEST.MF HelloWorld.class
+# build jar with manifest (new line at the end of manifest file)
+jar -cvfm simple-compile.jar MANIFEST.MF HelloWorld.class
 
 # run jar
+java -jar simple-compile.jar
