@@ -22,12 +22,11 @@ install all available plugins to jvisualvm
 
    see: https://docs.oracle.com/javase/tutorial/jmx/mbeans/standard.html
    
-   call both methods using jvisualvm.
+   call method using jvisualvm. and observe other value.
    
 7. create class with three methods:
-   - adding random longs
    - adding random doubles
-   - multiplying random longs
    - multiplying random doubles
-   - power of longs
    - power of doubles
+   
+   run them in loop and observe execution time in jvisualvm.
