@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.art.tutorial.jvm</groupId>
-    <artifactId>mvn-project</artifactId>
+    <artifactId>jvm-monitoring</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

@@ -31,7 +31,7 @@ public class MemoryUsageWithGUI extends JFrame {
         JButton button = new JButton("allocateShortTerm");
 
         button.addActionListener((ActionEvent event) -> {
-            new String(getRandomBytes(NUM_OF_BYTES)).intern();
+            getRandomBytes(NUM_OF_BYTES);
         });
 
         return button;
