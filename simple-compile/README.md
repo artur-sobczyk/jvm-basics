@@ -29,5 +29,12 @@ jar -cvfm simple-compile.jar MANIFEST.MF HelloWorld.class
 ## run jar
 java -jar simple-compile.jar
 
+## compile class with lombok
+javac -cp lib/lombok.jar User.java
+
+see: http://jd.benow.ca/ 
+java -jar jd-gui-1.4.0.jar
+
+
 ## run class in debug mode
-java HelloWorld -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8080
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=8080 HelloWorld

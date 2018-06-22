@@ -11,7 +11,7 @@ import java.util.Random;
 public class MemoryUsageWithGUI extends JFrame {
 
     private static final Random RANDOM = new Random();
-    private static final int NUM_OF_BYTES = 1000000;
+    private static final int NUM_OF_BYTES = 5000000;
     private static final List<byte[]> list = new ArrayList<>();
 
     public MemoryUsageWithGUI() {
@@ -31,7 +31,7 @@ public class MemoryUsageWithGUI extends JFrame {
         JButton button = new JButton("allocateShortTerm");
 
         button.addActionListener((ActionEvent event) -> {
-            getRandomBytes(NUM_OF_BYTES);
+            new String(getRandomBytes(NUM_OF_BYTES)).intern();
         });
 
         return button;
