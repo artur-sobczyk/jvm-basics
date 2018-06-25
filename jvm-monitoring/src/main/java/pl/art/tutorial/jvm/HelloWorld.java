@@ -1,14 +1,22 @@
 package pl.art.tutorial.jvm;
 
 /**
- * Example class
+ * Class level description.
  *
  * @author asobczyk
  */
 public class HelloWorld {
 
+    /**
+     * Filed description
+     */
     public static final String MESSAGE = "Hello World!";
 
+    /**
+     * Method documentation.
+     *
+     * @param args invocation parameters
+     */
     public static void main(String[] args) {
         new HelloWorld().print(MESSAGE);
     }
