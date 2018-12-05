@@ -25,8 +25,9 @@ public class HelloWorld {
      * Methods that prints text to {@link System#out}
      *
      * @param message text to be printed
+     *
      */
-    private void print(String message) {
+    public void print(String message) {
         System.out.println(message);
     }
 }
