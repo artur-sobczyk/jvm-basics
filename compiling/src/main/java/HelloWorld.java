@@ -1,8 +1,9 @@
 public class HelloWorld {
 
-	private static final String MESSAGE = "Hello World";
+    private static final String MESSAGE = "Hello World";
 
-	public static void main(String... args) throws Exception {
-		System.out.println(MESSAGE);
-	}	
+    public static void main(String... args) throws Exception {
+        System.out.println(MESSAGE);
+        //System.out.println(StringUtils.upperCase(MESSAGE));
+    }
 }

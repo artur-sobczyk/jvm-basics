@@ -1,1 +1,2 @@
 Main-Class: HelloWorld
+Class-Path: lib/commons-lang3-3.8.1.jar

@@ -1,6 +1,7 @@
 import lombok.*;
 
 @Data
+@Builder
 public class User {
 
     private String fistname;

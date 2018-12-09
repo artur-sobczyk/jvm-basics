@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+// -Xmx1m
 public class OutOfMemory {
 
     public static void main(String[] args) throws InterruptedException {
