@@ -5,7 +5,7 @@ Purpose of this repository is to provide materials allowing understand basic JVM
 - installed jdk
 - `JAVA_HOME` is set in system environment variables
 - `%JAVA_HOME/bin%` is added to `PATH` system environment variable - without it java commandline utils may not be visible in terminal
-- in console/terminal try `javac` if do not wkkr something is wrong :(
+- in console/terminal try `javac` if do not working something is wrong :(
 
 # 1.1. Class loading
 - Write program that will show sequence of loading and initialization of classes using static initializer section and constructors.
@@ -32,7 +32,7 @@ Purpose of this repository is to provide materials allowing understand basic JVM
 
 `java -cp simple-compile.jar HelloWorld` - run class from jar
 
-# 1.4. Executable jar building
+# 1.4. Jar building with MANIFEST
 
 `jar -cfe simple-compile.jar HelloWorld -C dist .` - builds jar with all files in dist and Manifest that include main class
 
@@ -47,8 +47,9 @@ Purpose of this repository is to provide materials allowing understand basic JVM
 `javac -cp lib\lombok.jar -d dist src\main\java\HelloWorld.java` - compiles class with lombok compile time preprocessor
 
 # 1.6. Run in debug mode
-
-`-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044`
+- add remote debug config in IntellijJ
+- set brake point in HelloWorld class
+- `java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=1044 -cp dist HelloWorld` - runs application in debug mode waiting for debugger
 
 # 2.1 Blow Stack with StackOverflowError
 - run StackOverFlow
@@ -67,6 +68,8 @@ Purpose of this repository is to provide materials allowing understand basic JVM
 - jvisualvm 
     - https://visualvm.github.io/download.html
     - unpack and install all plugins
+    - `-Xmx100m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof` - heap dump on error
+    - `-XX:+UnlockCommercialFeatures -XX:+FlightRecorder` - profiling
 - play with memory:
     - -Xmx10m
     - -Xmx1g

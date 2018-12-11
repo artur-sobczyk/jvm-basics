@@ -2,6 +2,7 @@ package pl.sda.jvm.monitoring;
 
 import org.apache.commons.lang3.RandomUtils;
 
+// -XX:+UnlockCommercialFeatures -XX:+FlightRecorder
 public class HeavyComputation {
 
     private final static int NUM_OF_ITERATION = 1000000;

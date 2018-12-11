@@ -16,16 +16,17 @@ public class ShortLeavingObjects {
 
         for (int i = 0; i < 10000; i++) {
 
-            l = Collections.unmodifiableList(getComplicatedObject());
-
+//            l.add(Collections.unmodifiableList(getComplicatedObject()));
+//            if (l.size() > 2) {
+//                l.remove(1);
+//            }
+            getObject();
             if (Thread.interrupted()) {
                 System.exit(-1);
             }
             Thread.sleep(100);
         }
         System.out.println("Finished");
-
-        l.clear();
     }
 
     private static byte[] getObject() {
@@ -37,10 +38,13 @@ public class ShortLeavingObjects {
     private static List getComplicatedObject() {
         List<Object> list = new ArrayList<>();
         list.add(getObject());
-        List<Object> list2 = new ArrayList<>();
-        list2.add(getObject());
-        list.add(Collections.unmodifiableList(list2));
-        list2.add(Collections.unmodifiableList(list));
-        return list2;
+
+        for (int i = 0; i < 100; i++) {
+            List<Object> list1 = new ArrayList<>();
+            list.add(list1);
+            list1.add(list);
+            list = list1;
+        }
+        return list;
     }
 }

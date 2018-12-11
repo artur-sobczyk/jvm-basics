@@ -1,4 +1,4 @@
-package pl.art.tutorial.jvm;
+package pl.sda.jvm.monitoring;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
@@ -10,30 +10,30 @@ public class MBeanExample {
 
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
 
-        ObjectName name = new ObjectName("pl.art.tutorial.jvm:type=SomeMBean");
-        SomeMBean mbean = new Some();
+        ObjectName name = new ObjectName("pl.sda.jvm.monitoring:type=TestMBean");
+        TestMBean mbean = new Test();
         mbs.registerMBean(mbean, name);
 
         System.out.println("Waiting forever...");
         Thread.sleep(Long.MAX_VALUE);
     }
 
-    public interface SomeMBean {
-        void println();
+    public interface TestMBean {
+        void printHello();
 
-        int getValue();
+        int getPrintHalloInvocationNumber();
     }
 
-    static class Some implements SomeMBean {
+    static class Test implements TestMBean {
 
         private int value;
 
-        public void println() {
-            System.out.println("hallo");
+        public void printHello() {
+            System.out.println("Hello " + value);
             value++;
         }
 
-        public int getValue() {
+        public int getPrintHalloInvocationNumber() {
             return value;
         }
     }

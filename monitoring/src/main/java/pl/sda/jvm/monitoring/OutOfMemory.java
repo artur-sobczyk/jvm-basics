@@ -1,27 +1,36 @@
 package pl.sda.jvm.monitoring;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-// -Xmx1m
+// -Xmx1g
+// -XX:+HeapDumpOnOutOfMemoryError
+// -XX:HeapDumpPath=./heap_dump.hprof
 public class OutOfMemory {
+
+    private final static int MB = 1024 * 1024;
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Started");
-        List<byte[]> bytes = new ArrayList<>();
+        List<TestClass> bytes = new ArrayList<>();
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10000; i++) {
 
-            byte[] byteArray = new byte[1024 * 1024];
-            new Random(System.currentTimeMillis()).nextBytes(byteArray);
-            bytes.add(byteArray);
+            bytes.add(new TestClass());
 
-            if(Thread.interrupted()){
-                System.exit(-1);
-            }
-            Thread.sleep(100);
+//            if(Thread.interrupted()){
+//                System.exit(-1);
+//            }
+//            Thread.sleep(100);
+            System.out.println("Heap size: " +
+                    (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / MB + " MB");
         }
         System.out.println("Finished");
+    }
+
+    static class TestClass {
+        String field = RandomStringUtils.random(MB);
     }
 }
