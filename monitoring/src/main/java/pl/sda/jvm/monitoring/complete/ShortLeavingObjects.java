@@ -1,8 +1,7 @@
-package pl.sda.jvm.monitoring;
+package pl.sda.jvm.monitoring.complete;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 

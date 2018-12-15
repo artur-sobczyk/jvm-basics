@@ -1,4 +1,4 @@
-package pl.sda.jvm.monitoring;
+package pl.sda.jvm.monitoring.complete;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectInstance;

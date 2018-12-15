@@ -22,6 +22,8 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.0</version>
+            <!-- this dependency is needed only in compile time, on runtime there is no lombok at all.-->
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

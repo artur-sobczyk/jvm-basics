@@ -1,4 +1,4 @@
-package pl.sda.jvm.monitoring;
+package pl.sda.jvm.monitoring.complete;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -10,7 +10,7 @@ import java.util.List;
 // -XX:HeapDumpPath=./heap_dump.hprof
 public class OutOfMemory {
 
-    private final static int MB = 1024 * 1024;
+    private final static int MB =  1024;
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Started");
@@ -20,10 +20,10 @@ public class OutOfMemory {
 
             bytes.add(new TestClass());
 
-//            if(Thread.interrupted()){
-//                System.exit(-1);
-//            }
-//            Thread.sleep(100);
+            if(Thread.interrupted()){
+                System.exit(-1);
+            }
+            Thread.sleep(100);
             System.out.println("Heap size: " +
                     (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / MB + " MB");
         }

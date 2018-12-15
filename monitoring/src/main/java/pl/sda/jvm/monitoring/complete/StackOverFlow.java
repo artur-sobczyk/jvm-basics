@@ -1,7 +1,8 @@
-package pl.sda.jvm.monitoring;
+package pl.sda.jvm.monitoring.complete;
 
-import org.apache.commons.lang3.RandomStringUtils;
-
+/**
+ * method calls itself recursively.
+ */
 public class StackOverFlow {
 
     public static void main(String[] args) throws InterruptedException {
@@ -9,10 +10,10 @@ public class StackOverFlow {
         method(0);
     }
 
-    private static void method(int i) throws InterruptedException{
+    private static void method(int i) throws InterruptedException {
         System.out.println("depth: " + i);
         Thread.sleep(1);
-        if(Thread.interrupted()){
+        if (Thread.interrupted()) {
             System.exit(-1);
         }
         method(++i);
