@@ -7,18 +7,13 @@ import java.util.Random;
 
 public class ShortLeavingObjects {
 
-    private static final int OBJECT_SIZE_IN_BYTES = 1024 * 1024 * 50;
+    private static final int OBJECT_SIZE_IN_BYTES = 1024 * 1024;
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Started");
-        List l = new ArrayList();
 
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 100000; i++) {
 
-//            l.add(Collections.unmodifiableList(getComplicatedObject()));
-//            if (l.size() > 2) {
-//                l.remove(1);
-//            }
             getObject();
             if (Thread.interrupted()) {
                 System.exit(-1);

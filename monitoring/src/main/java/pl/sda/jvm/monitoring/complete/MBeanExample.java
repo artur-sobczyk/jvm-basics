@@ -22,6 +22,8 @@ public class MBeanExample {
         void printHello();
 
         int getPrintHalloInvocationNumber();
+
+        void clean();
     }
 
     static class Test implements TestMBean {
@@ -35,6 +37,11 @@ public class MBeanExample {
 
         public int getPrintHalloInvocationNumber() {
             return value;
+        }
+
+        @Override
+        public void clean() {
+            value = 0;
         }
     }
 }

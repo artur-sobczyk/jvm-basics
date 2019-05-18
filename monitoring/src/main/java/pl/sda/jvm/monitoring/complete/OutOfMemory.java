@@ -10,7 +10,7 @@ import java.util.List;
 // -XX:HeapDumpPath=./heap_dump.hprof
 public class OutOfMemory {
 
-    private final static int MB =  1024;
+    private final static int MB =  1024*1024;
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Started");
@@ -23,7 +23,7 @@ public class OutOfMemory {
             if(Thread.interrupted()){
                 System.exit(-1);
             }
-            Thread.sleep(100);
+            Thread.sleep(300);
             System.out.println("Heap size: " +
                     (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / MB + " MB");
         }

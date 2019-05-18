@@ -6,6 +6,7 @@ public class ClassA extends ClassB {
     }
 
     public ClassA() {
+        super();
         System.out.println("ClassA instantiated");
     }
 }

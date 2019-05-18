@@ -15,7 +15,7 @@ public class StackOverFlow2 {
         a.b = b;
         b.a = a;
 
-        a.toString();
+        a.test();
     }
 
     static class A {

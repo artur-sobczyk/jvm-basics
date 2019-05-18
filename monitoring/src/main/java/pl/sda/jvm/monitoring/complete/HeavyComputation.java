@@ -3,6 +3,7 @@ package pl.sda.jvm.monitoring.complete;
 import org.apache.commons.lang3.RandomUtils;
 
 // -XX:+UnlockCommercialFeatures -XX:+FlightRecorder
+// -Xverify:none
 public class HeavyComputation {
 
     private final static int NUM_OF_ITERATION = 1000000;
@@ -12,13 +13,15 @@ public class HeavyComputation {
         while (true) {
             long started = System.nanoTime();
             for (int i = 0; i < NUM_OF_ITERATION; i++) {
-//                power(RandomUtils.nextDouble(1, 10), -0.5);
-//                division(RandomUtils.nextDouble(1, 10), -0.5);
-//                sum(RandomUtils.nextDouble(1, 10), -0.5);
+                power(RandomUtils.nextDouble(1, 10), -0.5);
+                division(RandomUtils.nextDouble(1, 10), -0.5);
+                sum(RandomUtils.nextDouble(1, 10), -0.5);
                 stringConcat();
                 stringFormat();
             }
             System.out.println("Calculated in: " + (System.nanoTime() - started) / NUM_OF_ITERATION + " ns");
+
+            Thread.sleep(500);
         }
     }
 
